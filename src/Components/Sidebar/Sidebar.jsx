@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Sidebar.css";
 import home from "../../assets/home.png";
 import game_icon from "../../assets/game_icon.png";
@@ -15,9 +16,9 @@ import tom from "../../assets/tom.png";
 import megan from "../../assets/megan.png";
 import cameron from "../../assets/cameron.png";
 
-const Sidebar = ({ Sidebar }) => {
+const Sidebar = ({ sidebar }) => {
   return (
-    <div className={`sidebar${Sidebar ? "" : "small-sidebar"}`}>
+    <div className={`sidebar ${sidebar ? "" : "small-sidebar"}`}>
       <div className="shortcut-links">
         <div className="side-link">
           <img src={home} alt="Home" />
@@ -102,6 +103,10 @@ const Sidebar = ({ Sidebar }) => {
       </div>
     </div>
   );
+};
+
+Sidebar.propTypes = {
+  sidebar: PropTypes.bool.isRequired,
 };
 
 export default Sidebar;
